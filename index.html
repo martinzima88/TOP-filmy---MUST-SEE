@@ -109,6 +109,36 @@
   
   <!-- App interactivity logic -->
   <script>
+    // Image Error Handler to inject custom premium CSS fallbacks
+    function handleImageError(img, id, title) {
+      const wrapper = img.parentElement;
+      wrapper.classList.remove('has-image');
+      img.style.display = 'none';
+      
+      const fallback = document.createElement('div');
+      fallback.className = 'still-fallback';
+      fallback.innerHTML = `
+        <svg class="still-fallback-icon" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M3 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H3zm10 4v6H3V6h10zM2 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1H2V4z"/>
+        </svg>
+        <span class="still-fallback-text">${title}</span>
+      `;
+      
+      // Customize gradients deterministic based on title length
+      const gradients = [
+        "linear-gradient(135deg, #1F2937 0%, #111827 100%)",
+        "linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%)",
+        "linear-gradient(135deg, #172554 0%, #0F172A 100%)",
+        "linear-gradient(135deg, #27272A 0%, #09090B 100%)",
+        "linear-gradient(135deg, #311B92 0%, #0F172A 100%)"
+      ];
+      
+      const gradIndex = title.length % gradients.length;
+      fallback.style.background = gradients[gradIndex];
+      
+      wrapper.appendChild(fallback);
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("movies-container");
       const searchBar = document.getElementById("search-bar");
@@ -253,6 +283,14 @@
 
               <!-- Column Right: Memorable Scene -->
               <div class="movie-column-right">
+                <!-- Movie Still Container -->
+                <div class="movie-still-container">
+                  <div class="movie-still-wrapper" id="still-wrapper-${movie.id}">
+                    <img class="movie-still" src="stills/${movie.id}.jpg" alt="Záběr z filmu ${movie.title}" onload="this.parentElement.classList.add('has-image')" onerror="handleImageError(this, '${movie.id}', '${movie.title}')">
+                  </div>
+                  <div class="still-copyright">© ${movie.copyright}</div>
+                </div>
+
                 <div class="info-section">
                   <h4>
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

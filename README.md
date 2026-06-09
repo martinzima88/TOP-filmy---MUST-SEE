@@ -74,3 +74,17 @@ Tento soubor můžete otevřít v jakémkoliv textovém editoru (Poznámkový bl
 }
 ```
 Ujistěte se, že zachováte správnou syntaxi JavaScriptu (čárky mezi položkami a uvozovky kolem textů).
+
+---
+
+## 🖼️ Jak přidat fotky/záběry z filmů (Movie Stills)
+
+Medailonky filmů obsahují vyhrazený rámeček na filmové záběry s copyrightem.
+* **Ukázkový soubor:** Pro demonstraci funkčnosti je do složky `stills` přiložen vygenerovaný záběr ze slavného snímku *12 rozhněvaných mužů* (`stills/12-angry-men.jpg`).
+* **Jak doplnit vlastní fotky pro ostatní filmy:**
+  1. Stáhněte si ze svého oblíbeného filmového webu (IMDb, ČSFD apod.) libovolné záběry z filmů.
+  2. Přejmenujte stažené obrázky přesně podle `id` filmů (např. `matrix.jpg`, `se7en.jpg`, `dark-knight.jpg` atd.).
+  3. Vložte je do složky **`stills`** v adresáři projektu.
+  4. Hotovo! Stránka si je automaticky načte.
+* **Co když fotky chybí?** Nemusíte se bát nevzhledných ikon „rozbitého obrázku“. Aplikace automaticky detekuje chybějící soubory a nahradí je elegantní, temně tónovanou kartou s ikonou filmové klapky a názvem filmu. Při tisku se tyto náhrady automaticky skryjí, aby šetřily toner tiskárny.
+

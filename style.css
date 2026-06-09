@@ -441,6 +441,88 @@ header::after {
   background: var(--accent-green);
 }
 
+/* Movie Still Styles */
+.movie-still-container {
+  width: 100%;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: rgba(11, 14, 20, 0.4);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-still-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: linear-gradient(135deg, rgba(20, 26, 38, 0.8) 0%, rgba(11, 14, 20, 0.9) 100%);
+  overflow: hidden;
+}
+
+.movie-still {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-still {
+  transform: scale(1.03);
+}
+
+.still-copyright {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  background: rgba(11, 14, 20, 0.8);
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Fallback card styling when image fails to load */
+.still-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1C2434 0%, #0B0E14 100%);
+  color: var(--text-secondary);
+  gap: 8px;
+}
+
+.still-fallback-icon {
+  color: var(--accent-gold);
+  opacity: 0.5;
+  transition: var(--transition-smooth);
+}
+
+.movie-card:hover .still-fallback-icon {
+  transform: translateY(-2px) scale(1.05);
+  opacity: 0.8;
+}
+
+.still-fallback-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* Content Columns Layout */
 .movie-content {
   display: grid;
@@ -905,5 +987,43 @@ footer a:hover {
     background-size: 100% 24px; /* Vytvoří 2 linky o výšce 24px */
     background-repeat: repeat-y;
     opacity: 0.6;
+  }
+  
+  /* On print, hide fallback placeholders to save ink, but keep real images */
+  .still-fallback {
+    display: none !important;
+  }
+  
+  .movie-still-container {
+    border: 1px solid #CCC !important;
+    background: none !important;
+    margin-bottom: 10px !important;
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  .movie-still-wrapper {
+    background: none !important;
+    padding-top: 0 !important;
+    height: auto !important;
+  }
+  
+  /* If JS successfully loaded an image, we restore aspect ratio */
+  .movie-still-wrapper.has-image {
+    padding-top: 56.25% !important;
+    height: 0 !important;
+  }
+  
+  .movie-still {
+    border: none !important;
+    filter: grayscale(100%); /* print photos in black and white */
+  }
+  
+  .still-copyright {
+    border: none !important;
+    background: none !important;
+    color: #444 !important;
+    padding: 4px 8px !important;
+    font-size: 7pt !important;
   }
 }
