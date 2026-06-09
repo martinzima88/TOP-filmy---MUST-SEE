@@ -1,0 +1,321 @@
+const moviesData = [
+  {
+    id: "matrix",
+    title: "Matrix",
+    originalTitle: "The Matrix",
+    year: 1999,
+    director: "Lana Wachowski, Lilly Wachowski",
+    duration: 136,
+    genres: ["Sci-Fi", "Akční"],
+    era: "modern",
+    rating: 87,
+    trailerUrl: "https://www.youtube.com/watch?v=vKQi3bBA1y8",
+    imageQuery: "the matrix green digital code raining down neo dodge bullet scene",
+    whyWatch: "Tento film zcela redefinoval žánr sci-fi a akčního filmu na přelomu tisíciletí. Přináší hluboké filozofické otázky inspirované Platónovou alegorií jeskyně, solipsismem a simulakry Jeana Baudrillarda. Pokládá si klíčovou otázku: 'Jak víme, co je skutečné?' Zároveň přinesl revoluci ve vizuálních efektech (zejména bullet-time), střihu a choreografii bojových umění v západní kinematografii.",
+    music: "Soundtrack spojuje orchestrální hudbu Dona Davise s industriálním rockem, metalem a elektronikou (Rage Against the Machine, Prodigy, Rob Zombie). Davisova hudba využívá atonální prvky, polytonalitu a dechové nástroje napodobující digitální anomálie, což skvěle podtrhuje pocit deformované reality.",
+    memorableScene: "Legendární scéna na střeše, kde Neo poprvé v záklonu uhýbá kulkám vystřeleným Agentem v ultra zpomaleném záběru (bullet-time). Kamera krouží kolem postavy, zatímco čas se téměř zastavil, což dokonale demonstruje ovládnutí fyzikálních zákonů v simulaci.",
+    questions: [
+      "Pokud bys měl na výběr mezi modrou pilulkou (pohodlná iluze) a červenou pilulkou (krutá pravda), kterou by sis vybral a proč?",
+      "Jakým způsobem film vizuálně odlišuje svět Matrixu (simulaci) od skutečného světa (Sionu)? Zaměř se na barevné tóny.",
+      "V čem spočívá nebezpečí slepé důvěry v technologie podle tohoto filmu?"
+    ]
+  },
+  {
+    id: "se7en",
+    title: "Sedm",
+    originalTitle: "Se7en",
+    year: 1995,
+    director: "David Fincher",
+    duration: 127,
+    genres: ["Thriller", "Krimi", "Drama"],
+    era: "modern",
+    rating: 86,
+    trailerUrl: "https://www.youtube.com/watch?v=znmZoVkCjpI",
+    imageQuery: "se7en thriller movie dark rainy alleyway brad pitt morgan freeman detetctive flashlight",
+    whyWatch: "Jde o jeden z nejtemnějších a nejlépe vystavěných thrillerů všech dob. Režisér David Fincher stvořil mistrovské dílo neo-noiru, které zkoumá hlubiny lidské zkaženosti skrze koncept sedmi smrtelných hříchů. Snímek se vyhýbá klasickému hollywoodskému optimismu a staví diváka před morální bezmocnost tváří v tvář chladnému, kalkulujícímu zlu.",
+    music: "Autorem tísnivého soundtracku je Howard Shore. Hudba je disharmonická, plná nízkých smyčcových tónů a ambientních ruchů, které vyvolávají permanentní pocit úzkosti a špíny velkoměsta. Úvodní znělka s remixem skladby 'Closer' od Nine Inch Nails dokonale naladí na estetiku psychického rozpadu.",
+    memorableScene: "Závěrečná scéna na poušti ('Co je v té krabici?'). Zde se napětí nebuduje skrze akci, ale skrze psychologický tlak, dialog a mistrovský střih. Fincher divákovi neukáže samotný brutální obsah krabice, ale nechá pracovat jeho vlastní představivost, což je mnohem děsivější.",
+    questions: [
+      "Proč se detektiv Somerset (Morgan Freeman) na začátku filmu touží odstěhovat do ústraní a co se v něm na konci změní?",
+      "Jakou roli hraje ve filmu neustálý déšť a špína města? Jak to ovlivňuje psychologii postav a diváka?",
+      "Dokážeš vysvětlit, proč vrah John Doe považoval své činy za 'umělecké dílo' a kázání, nikoliv za obyčejné vraždy?"
+    ]
+  },
+  {
+    id: "dark-knight",
+    title: "Temný rytíř",
+    originalTitle: "The Dark Knight",
+    year: 2008,
+    director: "Christopher Nolan",
+    duration: 152,
+    genres: ["Akční", "Drama", "Thriller"],
+    era: "modern",
+    rating: 90,
+    trailerUrl: "https://www.youtube.com/watch?v=LDG9bisJEaI",
+    imageQuery: "the dark knight joker standing in street with semi truck background explosion heath ledger nolan",
+    whyWatch: "Tento film dokázal, že adaptace komiksu může být hlubokým psychologickým a společenským dramatem srovnatelným s antickou tragédií. Zkoumá tenkou hranici mezi hrdinstvím a padoušstvím, boj mezi nastoleným řádem a čistým, iracionálním chaosem. Geniální herecký výkon Heathe Ledgera v roli Jokera redefinoval filmové antagonisty.",
+    music: "Spolupráce Hanse Zimmera a Jamese Newtona Howarda přinesla revoluční soundtrack. Jokerův motiv ('Why So Serious?') je tvořen jediným, dlouho stoupajícím tónem na violoncello, který je elektronicky deformován a doplněn o zvuk žiletek škrábajících po kovových strunách. Tento neklidný tón skvěle ztělesňuje anarchii.",
+    memorableScene: "Scéna výslechu Jokera Batmanem v temné místnosti policejní stanice. Světlo dopadající shora odhaluje tváře obou rivalů. Joker zde slovně rozebírá Batmanovu morálku a ukazuje mu, že jsou jen dvě strany téže mince. Fyzické násilí zde prohrává s psychologickou manipulací.",
+    questions: [
+      "Co znamená Jokerovo tvrzení: 'Ty mě nedokážeš zabít kvůli své zvrácené morální zásadě. A já tě nezabiju, protože s tebou je to moc velká zábava'?",
+      "Jak film pracuje s motivem duality a morálního pádu u postavy Harveyho Denta?",
+      "V čem spočíval sociální experiment se dvěma trajekty a co nám jeho výsledek říká o lidské povaze v krizových situícch?"
+    ]
+  },
+  {
+    id: "12-angry-men",
+    title: "12 rozhněvaných mužů",
+    originalTitle: "12 Angry Men",
+    year: 1957,
+    director: "Sidney Lumet",
+    duration: 96,
+    genres: ["Drama"],
+    era: "golden",
+    rating: 89,
+    trailerUrl: "https://www.youtube.com/watch?v=2L4I8206D3E",
+    imageQuery: "12 angry men jury room argument henry fonda sidney lumet black and white movie",
+    whyWatch: "Geniální ukázka toho, jak lze natočit napínavý celovečerní film v jediné místnosti o dvanácti postavách. Snímek je klíčovou učebnicí rétoriky, argumentace, psychologie skupiny a odhalování skrytých předsudků. Ukazuje sílu jednotlivce (Henry Fonda), který se nebojí postavit většinovému názoru a bojovat za pochybnost ve prospěch lidského života.",
+    music: "Hudba Kenyona Hopkinse je v tomto filmu využívána extrémně šetrně. Většinu stopáže tvoří pouze ticho, zvuky tekoucího potu, bzučení ventilátoru a gradující hlasy porotců. O to silněji působí těch několik málo momentů, kdy zazní melancholické tóny sólové flétny a smyčců, které podtrhují tíhu rozhodování.",
+    memorableScene: "Postupný zvrat při hlasování, kdy porotce č. 8 (Henry Fonda) vytáhne z kapsy naprosto stejný vyskakovací nůž, jakým měl obžalovaný chlapec zavraždit svého otce. Tento moment otřese stoprocentní jistotou ostatních porotců o nezvratnosti důkazů.",
+    questions: [
+      "Jakým způsobem režisér využívá kameru (ohniskovou vzdálenost a úhly) k vyvolání pocitu klaustrofobie a stísněnosti s postupujícím časem a rostoucí teplotou v místnosti?",
+      "Které předsudky (sociální, rasové, osobní) bránily jednotlivým porotcům v objektivním posouzení případu?",
+      "Proč je v demokratickém soudním systému koncept 'rozumné pochybnosti' tak důležitý?"
+    ]
+  },
+  {
+    id: "butch-sundance",
+    title: "Butch Cassidy a Sundance Kid",
+    originalTitle: "Butch Cassidy and the Sundance Kid",
+    year: 1969,
+    director: "George Roy Hill",
+    duration: 110,
+    genres: ["Western", "Komedie", "Dobrodružný"],
+    era: "new-wave",
+    rating: 83,
+    trailerUrl: "https://www.youtube.com/watch?v=YdJWxH1hNio",
+    imageQuery: "butch cassidy and the sundance kid paul newman robert redford running out guns blazzing",
+    whyWatch: "Tento film je vrcholem subžánru 'buddy movie' (parťácký film) a zároveň nostalgickým loučením s érou Divokého západu. Místo drsných a neúprosných pistolníků představuje sympatické, chybující antihrdiny, kteří raději volí útěk a humor před zbytečným násilím. Snímek mistrovsky balancuje na hraně komedie a melancholické tragédie.",
+    music: "Burt Bacharach složil pro western netradiční, anachronický soundtrack plný jazzu a popu. Píseň 'Raindrops Keep Fallin' on My Head' získala Oscara. Její bezstarostný tón doprovázející jízdu na kole ostře kontrastuje s blížícím se tragickým osudem obou banditů, což zesiluje nostalgický nádech filmu.",
+    memorableScene: "Slavný závěrečný záběr (freeze-frame). Butch a Sundance, těžce zranění a obklíčení celou bolivijskou armádou, vyrazí ze dveří s tasenými zbraněmi vstříc jisté smrti. Kamera jejich pohyb zmrazí v čase, čímž je promění v nesmrtelné legendy a ušetří diváka pohledu na jejich krvavý konec.",
+    questions: [
+      "Jak se ve filmu projevuje střet 'starého Divokého západu' s nastupující moderní dobou (průmysl, organizovaný zákon, jízdní kolo)?",
+      "V čem spočívá tajemství chemie a magnetismu mezi postavami Paula Newmana a Roberta Redforda?",
+      "Proč si myslíš, že režisér zvolil pro úvodní pasáž filmu sépiové zabarvení připomínající staré fotografie?"
+    ]
+  },
+  {
+    id: "jurassic-park",
+    title: "Jurský park",
+    originalTitle: "Jurassic Park",
+    year: 1993,
+    director: "Steven Spielberg",
+    duration: 127,
+    genres: ["Sci-Fi", "Dobrodružný", "Thriller"],
+    era: "modern",
+    rating: 86,
+    trailerUrl: "https://www.youtube.com/watch?v=QWBK1F35070",
+    imageQuery: "jurassic-park t-rex escape rain scene jeep lights steven spielberg movie dinosaur",
+    whyWatch: "Milník v oblasti vizuálních efektů, který poprvé v historii plnohodnotně zkombinoval revoluční počítačovou animaci (CGI) s animatronickými modely v životní velikosti. Spielberg stvořil nadčasové dobrodružství, které zkoumá etické hranice vědeckého pokroku, teorii chaosu a lidskou chamtivost snažící se podrobit si přírodu.",
+    music: "John Williams složil jedno ze svých nejikoničtějších témat. Monumentální orchestrální motiv plný lesních rohů a smyčců evokuje pocit dětského úžasu a majestátnosti přírody při prvním pohledu na dinosaury. Tento motiv je však v průběhu filmu střídán agresivními, disharmonickými rytmy doprovázejícími útoky predátorů.",
+    memorableScene: "Noční útok Tyrannosaura Rexe na zaparkovaná auta v dešti. Napětí graduje ještě před příchodem dinosaura pomocí chvějící se hladiny vody ve sklenici. Samotná scéna mistrovsky kombinuje zvuk (děsivý řev T-Rexe složený ze zvuků slona, tygra a aligátora) a tmu protínanou pouze kužely světel z aut.",
+    questions: [
+      "Vysvětli varování matematika Iana Malcolma (Jeff Goldblum): 'Vaši vědci byli tak posedlí tím, zda to dokážou udělat, že nemysleli na to, zda by měli.' Jak se toto varování ve filmu naplní?",
+      "Jak film pracuje s napětím a principem 'ukazovat méně znamená více' v první polovině snímku?",
+      "Které prvky dělají z Jurského parku nadčasový film, který vypadá vizuálně lépe než mnohé dnešní velkofilmy?"
+    ]
+  },
+  {
+    id: "pulp-fiction",
+    title: "Pulp Fiction: Historky z podsvětí",
+    originalTitle: "Pulp Fiction",
+    year: 1994,
+    director: "Quentin Tarantino",
+    duration: 154,
+    genres: ["Krimi", "Drama", "Komedie"],
+    era: "modern",
+    rating: 89,
+    trailerUrl: "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
+    imageQuery: "pulp fiction john travolta uma thurman dance scene tarantino movie suit tie",
+    whyWatch: "Tento snímek definoval postmoderní film 90. let. Tarantino šokoval svět nelineární strukturou vyprávění (rozdělení na kapitoly, které na sebe časově nenavazují), banálními a popkulturou nasycenými dialogy gangsterů o masážích nohou či hamburgerech, černým humorem a estetizací násilí. Vrátil na výsluní Johna Travoltu a stvořil popkulturní fenomén.",
+    music: "Tarantino nepoužil klasického skladatele, ale sestavil soundtrack ze zapomenutých surf-rockových, soulových a popových skladeb 60. a 70. let (např. 'Misirlou' od Dicka Dalea nebo 'You Never Can Tell' od Chucka Berryho). Hudba zde funguje jako další postava a udává rytmus celému vyprávění.",
+    memorableScene: "Taneční soutěž Mii Wallace (Uma Thurman) a Vincenta Vegy (John Travolta) v retro podniku Jack Rabbit Slim's. Scéna je plná cool stylizace, twistových pohybů a dokonale ilustruje Tarantinovu schopnost proměnit zdánlivě bezvýznamnou scénu v nejikoničtější moment dekády.",
+    questions: [
+      "Jak nelineární struktura vyprávění (přeházení chronologie děje) ovlivňuje vnímání postav a jejich osudů divákem?",
+      "Co podle tebe symbolizuje tajemný zářící kufřík, jehož obsah divák nikdy nespatří? Proč nám ho režisér neukáže?",
+      "Tarantino často míchá extrémní násilí s komediálními dialogy. Jaký to má vliv na atmosféru filmu? Je to etické?"
+    ]
+  },
+  {
+    id: "godfather",
+    title: "Kmotr",
+    originalTitle: "The Godfather",
+    year: 1972,
+    director: "Francis Ford Coppola",
+    duration: 175,
+    genres: ["Krimi", "Drama"],
+    era: "new-wave",
+    rating: 92,
+    trailerUrl: "https://www.youtube.com/watch?v=UaVTIH8mujA",
+    imageQuery: "the godfather marlon brando don vito corleone holding cat al pacino coppola movie",
+    whyWatch: "Mistrovské dílo světové kinematografie, které proměnilo brakový román Mario Puza v shakespearovské rodinné drama gigantických rozměrů. Kmotr není jen film o mafii; je to sága o rodinné loajalitě, morálním rozkladu, korupci moci a temné straně amerického snu. Snímek nabízí bezchybné herecké výkony, precizní režii a revoluční kameru Gordona Willise.",
+    music: "Nino Rota složil melancholický a nostalgický soundtrack s dominujícím italským folklórním nádechem. Hlavní téma ('Love Theme from The Godfather' / 'Speak Softly Love') evokuje sicilské kořeny rodiny Corleone a dodává brutálním činům mafie tragický, až romantický podtón.",
+    memorableScene: "Křestní scéna v závěru filmu. Paralelní střih mistrovsky střídá záběry z kostela, kde se Michael Corleone stává kmotrem dítěte a zříká se satana, se záběry brutálních vražd šéfů konkurenčních rodin, které sám nařídil. Kontrast svatosti a chladnokrevného násilí definuje jeho proměnu.",
+    questions: [
+      "Sleduj proměnu Michaela Corleoneho (Al Pacino) od válečného hrdiny, který se nechce zapojit do rodinného byznysu, po chladnokrevného Dona. Které momenty byly pro tuto proměnu klíčové?",
+      "Proč kamera Gordona Willise získala přezdívku 'Princ temnoty'? Jak práce se stíny a tmou odráží charakter postav?",
+      "Jak film definuje pojmy jako 'čest', 'rodina' a 'respekt' v kontrastu s nezákonnou činností Corleonových?"
+    ]
+  },
+  {
+    id: "schindlers-list",
+    title: "Schindlerův seznam",
+    originalTitle: "Schindler's List",
+    year: 1993,
+    director: "Steven Spielberg",
+    duration: 195,
+    genres: ["Drama", "Historický", "Životopisný"],
+    era: "modern",
+    rating: 89,
+    trailerUrl: "https://www.youtube.com/watch?v=gG22XNhtnoY",
+    imageQuery: "schindlers list girl in red coat black and white scene steven spielberg liám neeson",
+    whyWatch: "Nejsilnější umělecké svědectví o hrůzách holokaustu. Spielberg se vzdal svých typických hollywoodských berliček a natočil syrové, černobílé, téměř dokumentárně působící drama o záchraně 1200 židovských životů průmyslníkem Oskarem Schindlerem. Zkoumá podstatu dobra a zla, lidskost v nelidských podmínkách a morální povinnost jednotlivce.",
+    music: "John Williams vytvořil hluboce teskný soundtrack, kterému dominuje sólové houslové téma v podání virtuosa Itzhaka Perlmana. Hudba je prostá patosu, je intimní, bolestná a nese v sobě staletou melancholii židovské kultury.",
+    memorableScene: "Scéna likvidace krakovského ghetta, během níž Oskar Schindler pozoruje z kopce chaos a brutalitu. Uprostřed černobílé scény si všimne malé holčičky v červeném kabátku (jediný barevný prvek ve filmu), která se zmateně potácí mezi umírajícími. Tento vizuální detail symbolizuje Schindlerovo morální probuzení.",
+    questions: [
+      "Proč se Spielberg rozhodl natočit film černobíle? Jak to ovlivňuje dokumentární věrohodnost a emoce diváka?",
+      "V čem spočívá rozdíl mezi Schindlerovým pojetím moci ('moc je, když máme plný důvod zabít, a přesto to neuděláme') a chováním velitele koncentračního tábora Amona Gotha?",
+      "Co vyjadřuje Talmudský citát vyrytý na prstenu, který Schindler dostal od svých dělníků: 'Ten, kdo zachrání jeden život, zachrání celý svět'?"
+    ]
+  },
+  {
+    id: "spirited-away",
+    title: "Cesta do fantazie",
+    originalTitle: "Sen to Chihiro no Kamikakushi",
+    year: 2001,
+    director: "Hajao Mijazaki",
+    duration: 125,
+    genres: ["Animovaný", "Fantasy", "Dobrodružný"],
+    era: "modern",
+    rating: 86,
+    trailerUrl: "https://www.youtube.com/watch?v=ByXuk9QqQkk",
+    imageQuery: "spirited-away spirited away chihiro no-face train scene miyazaki ghibli anime",
+    whyWatch: "Tento klenot studia Ghibli jako jediný neanglicky mluvený anime film získal Oscara. Jde o hlubokou alegorii dospívání (přechodového rituálu), ztráty identity v konzumní společnosti, ekologie a respektu k tradicím a přírodním duchům (šintoismus). Mijazakiho bezbřehá fantazie vytváří fascinující svět bez jasně černobílých postav.",
+    music: "Joe Hisaiši složil nádherný a citlivý soundtrack, který kombinuje tradiční japonské melodie s evropským romantismem. Skladba 'One Summer's Day' na klavír a orchestr dokonale vyjadřuje nostalgii, osamělost a odhodlání hlavní hrdinky Čihiro.",
+    memorableScene: "Tichá jízda vlakem přes nekonečnou vodní hladinu. Čihiro cestuje společně s Beztvářníkem (No-Face) a dalšími tichými stíny. Scéna neobsahuje téměř žádné dialogy, pouze meditativní hudbu a nádhernou vizuální poezii vyjadřující melancholický pocit z plynutí času a dospívání.",
+    questions: [
+      "Jakým způsobem čarodějnice Jubaba kontroluje své zaměstnance (přivlastněním jejich jména)? Co to symbolizuje v reálném životě?",
+      "Jak film kritizuje moderní konzum a chamtivost (proměna rodičů v prasata, chování Beztvářníka polykajícího zlato)?",
+      "V čem se liší Mijazakiho pojetí záporných postav od klasických západních pohádek (např. Disney)?"
+    ]
+  },
+  {
+    id: "casablanca",
+    title: "Casablanca",
+    originalTitle: "Casablanca",
+    year: 1942,
+    director: "Michael Curtiz",
+    duration: 102,
+    genres: ["Romantický", "Drama", "Válečný"],
+    era: "golden",
+    rating: 85,
+    trailerUrl: "https://www.youtube.com/watch?v=BkL98nK1wC0",
+    imageQuery: "casablanca humphrey bogart ingrid bergman airport foggy night scene curtiz movie",
+    whyWatch: "Ultimátní klasika zlatého věku Hollywoodu, která vznikala jako běžný studiový produkt v době probíhající druhé světové války, avšak stala se jedním z nejcitovanějších filmů všech dob. Zkoumá konflikt mezi osobním štěstím (láskou) a morální povinností vůči vyššímu principu (boji proti fašismu). Humphrey Bogart jako cynický Rick Blaine definoval archetyp drsného romantika.",
+    music: "Max Steiner skvěle využil píseň 'As Time Goes By' od Hermana Hupfelda. Tato melodie slouží jako nostalgický motiv zakázané lásky mezi Rickem a Ilsou. Steiner ji mistrovsky rozvíjí do různých nálad napříč celým filmem.",
+    memorableScene: "Vlastenecký souboj písní v Rickově baru. Němečtí důstojníci začnou zpívat svou nacistickou hymnu 'Wacht am Rhein'. Odbojář Victor Laszlo nařídí orchestru hrát francouzskou hymnu 'Marseillaisu'. Celý bar se přidá k Laszlovi a německé vojáky překřičí. Jde o nesmírně emotivní scénu plnou skutečného válečného vzdoru (mnozí komparzisté byli reální uprchlíci z Evropy).",
+    questions: [
+      "Sleduj Rickův přerod z naprostého cynika ('Pro nikoho nenasazuji krk') v aktivního bojovníka za svobodu. Co tuto změnu způsobilo?",
+      "Proč se Casablanca stala tak ikonickou? Které slavné repliky z tohoto filmu přešly do běžné mluvy?",
+      "Byl závěrečný Rickův čin na letišti obětí, nebo vítězstvím? Jak bys rozhodnutí postavy hodnotil ty?"
+    ]
+  },
+  {
+    id: "space-odyssey",
+    title: "2001: Vesmírná odysea",
+    originalTitle: "2001: A Space Odyssey",
+    year: 1968,
+    director: "Stanley Kubrick",
+    duration: 149,
+    genres: ["Sci-Fi", "Dobrodružný"],
+    era: "new-wave",
+    rating: 83,
+    trailerUrl: "https://www.youtube.com/watch?v=oR_e9y-bka0",
+    imageQuery: "2001 a space odyssey hal 9000 red eye spaceship stanley kubrick movie monolith",
+    whyWatch: "Vizuální a myšlenkový monument, který povýšil sci-fi na filozofickou poezii. Stanley Kubrick minimalizoval dialogy a nechal vyprávět čistě obraz a hudbu. Film zkoumá evoluci lidstva, zrod vědomí, umělou inteligenci (HAL 9000) a existenci mimozemského intelektu symbolizovaného tajemným monolitem. Triky vytvořené před přistáním člověka na Měsíci berou dech i dnes.",
+    music: "Kubrick zavrhl původní orchestrální hudbu a nahradil ji klasickými díly (Richard Strauss: 'Tak pravil Zarathustra', Johann Strauss: 'Na krásném modrém Dunaji'). Valčík doprovázející ladný tanec kosmických lodí ve vesmírném vakuu dokonale spojuje lidskou technologii s kosmickým řádem.",
+    memorableScene: "Slavný střih zvaný 'match cut' na začátku filmu. Pravěký opičák v záchvatu geniality použije kost jako první nástroj (zbraň) k zabití nepřítele a vítězně ji vyhodí do vzduchu. Rotující kost ve vzduchu se střihem promění v moderní vesmírný satelit obíhající Zemi. Jediným střihem Kubrick překonal miliony let lidského vývoje.",
+    questions: [
+      "Co symbolizuje záhadný černý monolit, který se objevuje v klíčových momentech lidské evoluce?",
+      "Proč počítač HAL 9000 začne chybovat a obrátí se proti lidské posádce? Kdo v tomto souboji nese morální vinu?",
+      "Jak na tebe působí pomalé tempo filmu a absence dialogů? V čem se tento přístup liší od moderních sci-fi filmů?"
+    ]
+  },
+  {
+    id: "shawshank",
+    title: "Vykoupení z věznice Shawshank",
+    originalTitle: "The Shawshank Redemption",
+    year: 1994,
+    director: "Frank Darabont",
+    duration: 142,
+    genres: ["Drama"],
+    era: "modern",
+    rating: 95,
+    trailerUrl: "https://www.youtube.com/watch?v=PLl99DlL6b4",
+    imageQuery: "the shawshank redemption tim robbins rain arms open wide freedom scene",
+    whyWatch: "Dlouhodobě nejlépe hodnocený film na filmových databázích (ČSFD i IMDb). Jde o hluboce humanistický příběh o síle naděje, přátelství, trpělivosti a vnitřní svobodě, kterou člověku nelze vzít ani za zdmi vězení. Ukazuje, že i v tom nejkrutějším prostředí si lze uchovat lidskou důstojnost a inteligencí zvítězit nad korupcí a násilím.",
+    music: "Thomas Newman složil jemný, citlivý a melancholický soundtrack s dominujícími klavírními tématy a tichými smyčci, které evokují plynutí času a osamění. Hudba skvěle graduje v momentech osvobození a naděje.",
+    memorableScene: "Scéna útěku Andyho Dufresna. Poté, co se proplazí kilometrovou odpadní rourou plnou výkalů, se ocitne venku v dešti. Strhne ze sebe vězeňskou košili, rozpřáhne ruce k nebi a v blescích bouře se symbolicky očišťuje a přijímá svobodu. Jde o jednu z nejkatarznějších scén světového filmu.",
+    questions: [
+      "Co vyjadřuje postava starého vězně Brookse a koncept 'institucionalizace' (kdy si člověk zvykne na vězení natolik, že v reálném světě nedokáže žít)?",
+      "Jak film definuje rozdíl mezi Andym (který věří v naději) a Redem (který naději považuje za nebezpečnou věc, co může člověka zlomit)?",
+      "Jakými způsoby si Andy udržoval vnitřní svobodu a lidskou důstojnost během svého dvacetiletého věznění?"
+    ]
+  },
+  {
+    id: "citizen-kane",
+    title: "Občan Kane",
+    originalTitle: "Citizen Kane",
+    year: 1941,
+    director: "Orson Welles",
+    duration: 119,
+    genres: ["Drama", "Mysteriózní"],
+    era: "golden",
+    rating: 83,
+    trailerUrl: "https://www.youtube.com/watch?v=8ECaJ7J4J14",
+    imageQuery: "citizen kane orson welles rosebud sled snow globe scene movie",
+    whyWatch: "Tento film je považován za 'učebnici moderního filmu'. Teprve pětadvacetiletý režisér a herec Orson Welles v něm způsobil revoluci: použil hloubku ostrosti (deep focus - vše v záběru je ostré), nelineární vyprávění skrze vzpomínky různých lidí, dynamický střih a podhledy kamery odhalující stropy ateliérů. Zkoumá prázdnotu úspěchu a tragédii muže, který měl všechno, kromě lásky.",
+    music: "Bernard Herrmann (pozdější dvorní skladatel Hitchcocka) složil svůj debutový filmový soundtrack. Místo neustálé romantické hudby použil tzv. 'leitmotivy' (krátké hudební motivy spojené s postavami či tématy - např. motiv moci a motiv Rosebud) a propojoval hudbou jednotlivé střihové sekvence.",
+    memorableScene: "Úvodní scéna umírání starého Charlese Fostera Kanea v jeho obřím, chmurném sídle Xanadu. Z jeho ruky vypadne skleněné těžítko se sněžením a rozbije se na zemi, zatímco on šeptá své poslední slovo: 'Rosebud' (Poupátko). Kamera detailně snímá deformovaný odraz v rozbitém skle, což zahajuje pátrání po smyslu tohoto slova.",
+    questions: [
+      "Co nakonec symbolizovalo záhadné poslední slovo 'Rosebud' a proč ho novináři nikdy neodhalili, přestože ho divák na konci spatří?",
+      "Jak film kritizuje vliv médií a manipulaci s veřejným míněním ze strany bohatých magnátů? Vidíš zde paralelu s dneškem?",
+      "V čem byla kamera Gregga Tolanda v tomto filmu revoluční (hloubka ostrosti, stíny)?"
+    ]
+  },
+  {
+    id: "psycho",
+    title: "Psycho",
+    originalTitle: "Psycho",
+    year: 1960,
+    director: "Alfred Hitchcock",
+    duration: 109,
+    genres: ["Horor", "Thriller", "Mysteriózní"],
+    era: "golden",
+    rating: 85,
+    trailerUrl: "https://www.youtube.com/watch?v=DTJQgYbb8eM",
+    imageQuery: "psycho shower scene alfred hitchcock janet leigh anthony perkins movie silhouette",
+    whyWatch: "Otec moderních slasherů a psychologických hororů. Alfred Hitchcock šokoval tehdejší publikum porušením nepsaných pravidel (zabití hlavní hrdinky v první třetině filmu) a otevřeným zkoumáním duševní poruchy, oidipovského komplexu a voyeurismu. Snímek geniálně manipuluje s diváckým očekáváním a ukazuje, že největší děs se neskrývá v příšerách, ale v lidské mysli.",
+    music: "Bernard Herrmann složil geniální soundtrack výhradně pro smyčcový orchestr (pro chladnější, černobílý tón). Legendární skřípavé zvuky houslí v dešťové scéně ve sprše znějí jako bodání nožem a staly se synonymem pro filmový děs a napětí.",
+    memorableScene: "Slavná scéna ve sprše. Trvá zhruba 45 sekund, obsahuje 78 rychlých střihů a 52 kamerových pozic. Hitchcock nikdy neukáže nůž pronikající do těla, ani nahotu; divák si brutální násilí domýšlí sám díky geniálnímu střihu, stříkající vodě a Herrmannově bodavé hudbě.",
+    questions: [
+      "Hitchcock natáčel Psycho s nízkorozpočtovým televizním štábem a černobíle, přestože barva již byla běžná. Jak to filmu pomohlo?",
+      "Jak film pracuje s motivem vycpaných ptáků v Batesově motelu? Co symbolizují a jak předznamenávají chování Normana Batese?",
+      "Vysvětli, jakým způsobem Hitchcock manipuluje s divákem a jeho sympatiemi k postavám v průběhu filmu."
+    ]
+  }
+];
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = moviesData;
+}
